@@ -1,0 +1,28 @@
+.navBar__container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: black;
+    display: flex;
+}
+
+.navLinks__container{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+}
+
+
+.search__contact_container{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}

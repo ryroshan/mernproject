@@ -1,13 +1,7 @@
-import { fetchAllProduct } from './../services/fetchApi';
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { fetchProductAsync } from '../actions/getproducts';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-export const fetchProductAsync = createAsyncThunk(
-    'products/fetchProducts',
-    async ()=>{
-            const result = await fetchAllProduct();
-            return result;
-    }
-)
+
 
 interface IProducts {
     stock: string,

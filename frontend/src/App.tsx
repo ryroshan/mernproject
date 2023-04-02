@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { useAppDispatch, useAppSelector } from './redux/hook/hookType';
-import { fetchProductAsync } from '../src/redux/actions/getproducts';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import NavBar from './components/navbar/NavBar';
 import Contact from './pages/Contact';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
+import Loader from './components/loader/Loader';
 
 function App() {
-  const selector = useAppSelector(state=>state.products);
-  const dispatch = useAppDispatch()
-
   //  const btn = ()=> navigator.geolocation.getCurrentPosition(po=>{
   //   const {latitude, longitude} = po.coords;
   //   const url =`https://nominatim.openstreetmap.org/reverse?format=json&lat${latitude}&lon=${longitude}`;
@@ -26,10 +22,6 @@ function App() {
     // })
 
     // })
-  
-  useEffect(()=>{
-    dispatch(fetchProductAsync())
-  },[dispatch])
 
 
   return (
@@ -40,10 +32,10 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/about' element={<About />}/>
           <Route path='/contact' element={<Contact />}/>
+          <Route path='/loader' element={<Loader />} />
         </Routes>
         <Footer />
      </Router>
-
     </div>
   );
 }

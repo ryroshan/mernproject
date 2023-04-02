@@ -1,0 +1,22 @@
+.loader__container{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.loader__container >div {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-bottom: 5px solid gray;
+    animation: loadingRotate 800ms linear infinite;
+}
+
+@keyframes loadingRotate {
+    to{
+        transform: rotateZ(-360deg);
+    }
+}

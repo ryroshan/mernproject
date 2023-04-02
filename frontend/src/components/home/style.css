@@ -1,5 +1,5 @@
 .banner {
-    background-image: url("../../images/cover.jfif");
+    background-color: #074481;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,18 +12,3 @@
     color: white;
   }
   
-  
-
-  h1,p{
-    color: yellow;
-  }
-  
-  .banner > h1 {
-    margin: 10vmax;
-  
-    font: 600 2.5vmax "Roboto";
-  }
-  
-  .banner > p {
-    font: 300 1.4vmax "Lucida Sans";
-  }

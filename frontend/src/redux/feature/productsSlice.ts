@@ -1,27 +1,15 @@
 import { fetchProductAsync } from '../actions/getproducts';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-
-
-
-interface IProducts {
-    stock: string,
-    category: string,
-    description: string,
-    name: string,
-    numOfReviews: string,
-    price: number,
-    rating: number
-};
-
+import { IProductResponse } from '../types/types';
 
 interface IProductState  {
-   product : IProducts[],
-   status: 'idle' | 'loading' | 'succeeded' | 'failed',
-   error: string | null
-}
+    productsData : IProductResponse | null,
+    status: 'idle' | 'loading' | 'succeeded' | 'failed',
+    error: string | null
+ }
 
 const initialState: IProductState = {
-    product: [],
+    productsData: null,
     status: 'idle',
     error: null
 }
@@ -35,9 +23,9 @@ export const productsSlice = createSlice({
         .addCase(fetchProductAsync.pending, (state, action)=>{
             state.status = 'loading'
         })
-        .addCase(fetchProductAsync.fulfilled, (state, action:PayloadAction<IProducts[]>)=>{
+        .addCase(fetchProductAsync.fulfilled, (state, action:PayloadAction<IProductResponse>)=>{
             state.status = 'succeeded'
-            state.product = action.payload
+            state.productsData = action.payload
         })
         .addCase(fetchProductAsync.rejected, (state,action)=>{
             state.status = 'failed'

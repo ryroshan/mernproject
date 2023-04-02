@@ -1,0 +1,28 @@
+.product__contain{
+   display: flex;
+}
+
+img{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.product__contain{
+    overflow: hidden;
+}
+
+.img{
+    position: relative;
+    display: inline-block;
+    animation: move-img 20s linear infinite;
+}
+
+@keyframes move-img {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
